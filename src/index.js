@@ -4,17 +4,19 @@ import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 
+// redux setup
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
+// set up reducers
 const feedbackReducer = ( state = {}, action ) => {
   switch (action.type) {
       case 'FEELING':
           state.feeling = action.payload;
           return state;
       case 'UNDERSTANDING':
-          state.understanding= action.payload;
+          state.understanding = action.payload;
           return state;
       case 'SUPPORT':
           state.support = action.payload;

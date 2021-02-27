@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom';
 
@@ -7,11 +8,29 @@ function Submit() {
   const dispatch = useDispatch();
 
   const submitFeedback = () => {
-    alert('Submitted!')
-    dispatch({
-      type: 'RESET'
+    // console.log("feedbackReducer", feedbackReducer)
+    axios.post('/feedback',  feedbackReducer )
+    .then(response => {
+      console.log(response);
+      swal({
+        title: "Thank you!",
+        text: "We appreciate you taking the time to leave feedback!",
+        icon: "success",
+        button: "OK",
+      })
+      .then(submit => {
+        if(submit) {
+          dispatch({
+            type: 'RESET'
+          })
+          history.push('/');
+        }
+      });
     })
-    history.push('/')
+    .catch(err => {
+      console.log(err);
+      alert('Error sending data to DB')
+    })
   }
 
   return(
