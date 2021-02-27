@@ -1,7 +1,16 @@
+import { useHistory, Link } from 'react-router-dom';
+
 function Home() {
+  const history = useHistory();
+
+  const begin = () => {
+    history.push('/feeling')
+  }
+
   return(
     <div>
-      <p>You are Home</p>
+      <p>Cullen Feedback Form</p>
+      <button onClick={() => begin()}>Begin!</button>
     </div>
   )
 }
