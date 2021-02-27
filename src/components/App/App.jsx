@@ -7,7 +7,8 @@ import Home from '../Home/Home';
 import Feeling from '../Feeling/Feeling';
 import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
-import Comments from '../Comments/Comments'
+import Comments from '../Comments/Comments';
+import Submit from '../Submit/Submit';
 
 function App() {
 
@@ -32,6 +33,9 @@ function App() {
         </Route>
         <Route path='/comments' >
           <Comments />
+        </Route>
+        <Route path='/submit' >
+          <Submit />
         </Route>
       </div>
     </Router>

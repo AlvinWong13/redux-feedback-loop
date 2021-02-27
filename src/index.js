@@ -22,6 +22,9 @@ const feedbackReducer = ( state = {}, action ) => {
       case 'COMMENTS':
           state.comments = action.payload;
           return state;
+      case 'RESET':
+          state = {};
+          return state;
       default:
           return state;
   }
