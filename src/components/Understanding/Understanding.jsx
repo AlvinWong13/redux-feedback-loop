@@ -12,27 +12,32 @@ function Understanding() {
   const [understanding, setUnderstanding] = useState('')
 
   // handle event to go to next page
-  const toSupport = () => {
-    if (understanding === "") {
-        swal({
-          title: "Please pick one",
-          text: "Your feedback helps us improve",
-          icon: "warning",
-          button: "OK",
-        })
-        .then(response => {
-          if(response) {
-            return
-          }
-        });
-        }
-          else {
-            dispatch({
-              type: 'UNDERSTANDING',
-              payload: understanding
-            })
-          history.push('/support')   
-          }
+  const toSupport = (movement) => {
+    if (movement) {
+      if (understanding === "") {
+          swal({
+            title: "Please pick one",
+            text: "Your feedback helps us improve",
+            icon: "warning",
+            button: "OK",
+          })
+          .then(response => {
+            if(response) {
+              return
+            }
+          });
+      }
+      else {
+        dispatch({
+          type: 'UNDERSTANDING',
+          payload: understanding
+      })
+        history.push('/support')   
+      }
+    }
+    else {
+      history.push('/feeling')
+    }
   }
 
   return(
@@ -50,7 +55,9 @@ function Understanding() {
             <option value="2">2 - I understood a little bit</option>
             <option value="1">1 - I did not understand anything</option>
       </select>
-      <button onClick={() =>toSupport()}>Next</button>
+      <button onClick={() => toSupport(false)}>Previous</button>
+      <button onClick={() => toSupport(true)}>Next</button>
+      
     </div>
   )
 }

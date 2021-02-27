@@ -9,12 +9,17 @@ function Comments() {
   // capture local state
   const [comments, setComments] = useState('')
 
-  const toSubmit = () => {
-    dispatch({
-      type: 'COMMENTS',
-      payload: comments
-    })
-    history.push('/submit')
+  const toSubmit = (movement) => {
+    if (movement) {
+      dispatch({
+        type: 'COMMENTS',
+        payload: comments
+      })
+      history.push('/submit')
+    }
+    else {
+      history.push('/support')
+    }
   }
 
   return(
@@ -26,7 +31,8 @@ function Comments() {
         placeholder="comments"
         onChange={event => setComments(event.target.value)}>  
       </textarea>
-      <button onClick={() => toSubmit()}>Next</button>
+      <button onClick={() => toSubmit(false)}>Previous</button>
+      <button onClick={() => toSubmit(true)}>Next</button>
     </div>
   )
 }
