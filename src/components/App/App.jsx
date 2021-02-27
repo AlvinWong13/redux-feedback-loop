@@ -3,6 +3,9 @@ import React from 'react';
 import axios from 'axios';
 import './App.css';
 
+import { ThemeProvider, createMuiTheme } from '@material-ui/core';
+import { pink, blue } from '@material-ui/core/colors';
+
 import Home from '../Home/Home';
 import Feeling from '../Feeling/Feeling';
 import Understanding from '../Understanding/Understanding';
@@ -10,10 +13,22 @@ import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Submit from '../Submit/Submit';
 
+const outerTheme = createMuiTheme({
+  palette: {
+    primary: {
+      main: blue[500],
+    },
+    secondary: {
+      main: pink[500],
+    },
+  },
+});
+
 function App() {
 
   return (
     <Router>
+      <ThemeProvider theme={outerTheme}>
       <div className='App'>
         <header className='App-header'>
           <h1 className='App-title'>Feedback!</h1>
@@ -38,6 +53,7 @@ function App() {
           <Submit />
         </Route>
       </div>
+      </ThemeProvider>
     </Router>
   );
 }

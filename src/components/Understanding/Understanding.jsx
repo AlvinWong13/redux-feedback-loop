@@ -3,6 +3,9 @@ import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom';
 
 import swal from 'sweetalert';
+import Button from '@material-ui/core/Button'
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
 function Understanding() {
   const dispatch = useDispatch();
@@ -12,7 +15,7 @@ function Understanding() {
   const [understanding, setUnderstanding] = useState('')
 
   // handle event to go to next page
-  const toSupport = (movement) => {
+  const handleButton = (movement) => {
     if (movement) {
       if (understanding === "") {
           swal({
@@ -55,8 +58,18 @@ function Understanding() {
             <option value="2">2 - I understood a little bit</option>
             <option value="1">1 - I did not understand anything</option>
       </select>
-      <button onClick={() => toSupport(false)}>Previous</button>
-      <button onClick={() => toSupport(true)}>Next</button>
+      <Button 
+        startIcon={<ArrowBackIcon />}
+        variant="contained"
+        color="secondary"
+        onClick={() => handleButton(false)}>
+      Previous</Button>
+      <Button
+        endIcon={<ArrowForwardIcon />}
+        variant="contained"
+        color="primary"
+        onClick={() => handleButton(true)}>
+      Next</Button>
       
     </div>
   )

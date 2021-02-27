@@ -1,5 +1,8 @@
 import { useHistory, Link } from 'react-router-dom';
 
+import Button from '@material-ui/core/Button'
+import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
+
 function Home() {
   const history = useHistory();
 
@@ -9,8 +12,13 @@ function Home() {
 
   return(
     <div>
-      <p>Cullen Feedback Form</p>
-      <button onClick={() => begin()}>Begin!</button>
+      <h2>Cullen Feedback Form</h2>
+      <Button
+        endIcon={<PlayCircleOutlineIcon />}
+        variant="contained"
+        color="secondary"
+        onClick={() => begin()}>
+      Start Feedback!</Button>
     </div>
   )
 }

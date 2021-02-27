@@ -2,6 +2,10 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom';
 
+import Button from '@material-ui/core/Button'
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+
 function Comments() {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -9,7 +13,7 @@ function Comments() {
   // capture local state
   const [comments, setComments] = useState('')
 
-  const toSubmit = (movement) => {
+  const handleButton = (movement) => {
     if (movement) {
       dispatch({
         type: 'COMMENTS',
@@ -31,8 +35,18 @@ function Comments() {
         placeholder="comments"
         onChange={event => setComments(event.target.value)}>  
       </textarea>
-      <button onClick={() => toSubmit(false)}>Previous</button>
-      <button onClick={() => toSubmit(true)}>Next</button>
+      <Button
+        startIcon={<ArrowBackIcon />}
+        variant="contained"
+        color="secondary"
+        onClick={() => handleButton(false)}>
+      Previous</Button>
+      <Button
+        endIcon={<ArrowForwardIcon />}
+        variant="contained"
+        color="primary"
+        onClick={() => handleButton(true)}>
+      Next</Button>
     </div>
   )
 }
