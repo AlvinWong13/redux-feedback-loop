@@ -12,27 +12,32 @@ function Support() {
   const [support, setSupport] = useState('')
 
   // handle event to go to next page
-  const toComments = () => {
-    if (support === "") {
-        swal({
-          title: "Please pick one",
-          text: "Your feedback helps us improve",
-          icon: "warning",
-          button: "OK",
-        })
-        .then(response => {
-          if(response) {
-            return
+  const toComments = (movement) => {
+    if (movement) {
+      if (support === "") {
+          swal({
+            title: "Please pick one",
+            text: "Your feedback helps us improve",
+            icon: "warning",
+            button: "OK",
+          })
+          .then(response => {
+            if(response) {
+              return
+            }
+          });
           }
-        });
-        }
-          else {
-            dispatch({
-              type: 'SUPPORT',
-              payload: support
-            })
-          history.push('/comments')   
-          }
+      else {
+        dispatch({
+          type: 'SUPPORT',
+          payload: support
+      })
+        history.push('/comments')   
+      }
+    }
+    else {
+      history.push('/understanding')
+    }
   }
 
   return(
@@ -50,7 +55,8 @@ function Support() {
             <option value="2">2 - I could have used more support</option>
             <option value="1">1 - Not at all</option>
       </select>
-      <button onClick={() =>toComments()}>Next</button>
+      <button onClick={() => toComments(false)}>Previous</button>
+      <button onClick={() =>toComments(true)}>Next</button>
     </div>   
   )
 }
