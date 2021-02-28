@@ -3,6 +3,9 @@ import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom';
 
 import swal from 'sweetalert';
+import Button from '@material-ui/core/Button'
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
 function Support() {
   const dispatch = useDispatch();
@@ -12,7 +15,7 @@ function Support() {
   const [support, setSupport] = useState('')
 
   // handle event to go to next page
-  const toComments = (movement) => {
+  const handleButton = (movement) => {
     if (movement) {
       if (support === "") {
           swal({
@@ -55,8 +58,20 @@ function Support() {
             <option value="2">2 - I could have used more support</option>
             <option value="1">1 - Not at all</option>
       </select>
-      <button onClick={() => toComments(false)}>Previous</button>
-      <button onClick={() =>toComments(true)}>Next</button>
+      <div className="button_area">
+        <Button
+          startIcon={<ArrowBackIcon />}
+          variant="contained"
+          color="secondary"
+          onClick={() => handleButton(false)}>
+        Previous</Button>
+        <Button
+          endIcon={<ArrowForwardIcon />}
+          variant="contained"
+          color="primary"
+          onClick={() => handleButton(true)}>
+        Next</Button>
+      </div>
     </div>   
   )
 }

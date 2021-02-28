@@ -3,6 +3,8 @@ import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom';
 
 import swal from 'sweetalert';
+import Button from '@material-ui/core/Button'
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
 function Feeling() {
   const dispatch = useDispatch();
@@ -12,7 +14,7 @@ function Feeling() {
   const [feeling, setFeeling] = useState('')
 
   // handle event to go to next page
-  const toUnderstanding = () => {
+  const handleButton = () => {
     if (feeling === "") {
         swal({
           title: "Please pick one",
@@ -50,7 +52,14 @@ function Feeling() {
             <option value="2">2 - Not too great</option>
             <option value="1">1 - I wish today was over</option>
       </select>
-      <button onClick={() =>toUnderstanding()}>Next</button>
+      <div className="button_area">
+        <Button 
+          endIcon={<ArrowForwardIcon />} 
+          variant="contained" 
+          color="primary"
+          onClick={() => handleButton()}>
+        Next</Button>
+      </div>
     </div>
   )
 }
