@@ -44,7 +44,7 @@ function Support() {
   }
 
   return(
-    <div>
+    <div className="feedback_box">
       <h1>How well did you feel supported today?</h1>
       <select
           name="support"

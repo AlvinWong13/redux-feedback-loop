@@ -23,15 +23,50 @@ h4 {
 }
 
 textarea {
-  height: 100px;
-  width: 375px;
+  height: 150px;
+  width: 425px;
   resize: none;
 }
 
-.button_area{
+.button_area {
   padding-top: 35px;
-  width: 30%;
+  width: 75%;
   display: flex;
   justify-content: space-around;
   margin: auto;
+}
+
+.feedback_box {
+  margin: auto;
+  width: 50%;
+  border-radius: 25px;
+  border: 2px solid rgba(48, 48, 243, 0.884);
+  padding: 20px;
+  width: 450px;
+  height: 250px;
+}
+
+.comment_box {
+  margin: auto;
+  width: 50%;
+  border-radius: 25px;
+  border: 2px solid rgba(48, 48, 243, 0.884);
+  padding: 20px;
+  width: 525px;
+  height: 350px;
+}
+
+.review_box {
+  margin: auto;
+  width: 50%;
+  border-radius: 25px;
+  border: 2px solid rgba(48, 48, 243, 0.884);
+  padding: 20px;
+  width: 525px;
+  flex-direction: column
+}
+
+select {
+  display: block;
+  margin: 0 auto;
 }

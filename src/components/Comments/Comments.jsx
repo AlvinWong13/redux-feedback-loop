@@ -27,7 +27,7 @@ function Comments() {
   }
 
   return(
-    <div>
+    <div className="comment_box">
       <h1>Any comments you want to leave?</h1>
       <textarea
         id="comments"

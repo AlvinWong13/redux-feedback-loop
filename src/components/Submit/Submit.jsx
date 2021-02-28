@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 import swal from 'sweetalert';
 import Button from '@material-ui/core/Button'
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import DoneAllIcon from '@material-ui/icons/DoneAll';
 
 function Submit() {
   const feedbackReducer = useSelector(store => store.feedbackReducer)
@@ -43,7 +43,7 @@ function Submit() {
     }
   }
   return(
-    <div>
+    <div className="review_box">
       <h1>Review Your feedback</h1>
       <h4>Feelings: {feedbackReducer.feeling}</h4>
       <h4>Understanding: {feedbackReducer.understanding}</h4>
@@ -57,7 +57,7 @@ function Submit() {
           onClick={() => handleButton(false)}>
         Previous</Button>
         <Button
-          endIcon={<ArrowForwardIcon />}
+          endIcon={<DoneAllIcon />}
           variant="contained"
           color="primary"
           onClick={() => handleButton(true)}>

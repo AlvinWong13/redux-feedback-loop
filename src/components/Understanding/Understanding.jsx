@@ -44,7 +44,7 @@ function Understanding() {
   }
 
   return(
-    <div>
+    <div className="feedback_box">
       <h1>How well did you understand the material today?</h1>
       <select
           name="understanding"
