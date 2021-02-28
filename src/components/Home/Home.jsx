@@ -1,7 +1,7 @@
-import { useHistory, Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import Button from '@material-ui/core/Button'
-import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
+import ForwardIcon from '@material-ui/icons/Forward';
 
 function Home() {
   const history = useHistory();
@@ -12,12 +12,13 @@ function Home() {
 
   return(
     <div className="home_button">
+      <h2>Click below to being leaving your feedback!</h2>
       <Button
-        endIcon={<PlayCircleOutlineIcon />}
+        endIcon={<ForwardIcon />}
         variant="contained"
-        color="secondary"
+        color="primary"
         onClick={() => begin()}>
-      Start Feedback!</Button>
+      Start!</Button>
     </div>
   )
 }

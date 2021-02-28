@@ -1,17 +1,16 @@
+import React from 'react';
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { useHistory } from 'react-router-dom';
 
 import swal from 'sweetalert';
-import Button from '@material-ui/core/Button'
 import IconButton from '@material-ui/core/IconButton';
-import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+import ClearIcon from '@material-ui/icons/Clear';
 import FlagIcon from '@material-ui/icons/Flag';
 
 function Admin() {
   const dispatch = useDispatch();
-  const history = useHistory();
+  const [flag, setFlag] = React.useState(true);
   const adminReducer = useSelector(store => store.adminReducer)
 
   useEffect(() => {
@@ -56,7 +55,8 @@ function Admin() {
     })
   }
 
-  const flag = (editId) => {
+  const flagged = (editId) => {
+    setFlag(!flag);
     const id = Number(editId);
     axios.put(`/feedback/${id}`, id )
     .then(response => {
@@ -87,9 +87,9 @@ function Admin() {
                 return (
                     <tr key={feedback.id} className={feedback.flagged.toString()}>
                         <td><IconButton
-                              color="secondary"
+                              color={ flag ? "secondary" : "primary" }
                               variant="outlined"
-                              onClick={() => flag(feedback.id)}>
+                              onClick={() => flagged(feedback.id)}>
                               <FlagIcon />
                             </IconButton>
                         </td>
@@ -97,12 +97,12 @@ function Admin() {
                         <td>{feedback.understanding}</td>
                         <td>{feedback.support}</td>
                         <td>{feedback.comments}</td>
-                        <td><Button
-                              startIcon={<DeleteForeverIcon />}
+                        <td><IconButton
                               variant="contained"
                               color="secondary"
                               onClick={() => handleDelete(feedback.id)}>
-                            Delete</Button></td>
+                              <ClearIcon />
+                            </IconButton></td>
                     </tr>
                 )
             })}

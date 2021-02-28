@@ -44,6 +44,11 @@ function Support() {
   }
 
   return(
+    <>
+    <div className="page_number">
+    <p>3 of 4</p>
+    <div className="page_box3"></div>
+    </div>
     <div className="feedback_box">
       <h1>How well did you feel supported today?</h1>
       <select
@@ -72,7 +77,8 @@ function Support() {
           onClick={() => handleButton(true)}>
         Next</Button>
       </div>
-    </div>   
+    </div>
+    </>   
   )
 }
 

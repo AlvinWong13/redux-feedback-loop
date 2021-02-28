@@ -44,6 +44,11 @@ function Understanding() {
   }
 
   return(
+    <>
+    <div className="page_number">
+    <p>2 of 4</p>
+    <div className="page_box2"></div>
+    </div>
     <div className="feedback_box">
       <h1>How well did you understand the material today?</h1>
       <select
@@ -73,6 +78,7 @@ function Understanding() {
         Next</Button>
       </div>
     </div>
+    </>
   )
 }
 

@@ -38,6 +38,11 @@ function Feeling() {
   }
 
   return(
+    <>
+    <div className="page_number">
+    <p>1 of 4</p>
+    <div className="page_box1"></div>
+    </div>
     <div className="feedback_box" >
       <h1>How are you feeling today?</h1>
       <select
@@ -61,6 +66,7 @@ function Feeling() {
         Next</Button>
       </div>
     </div>
+    </>
   )
 }
 

@@ -27,12 +27,17 @@ function Comments() {
   }
 
   return(
+    <>
+    <div className="page_number">
+    <p>4 of 4</p>
+    <div className="page_box4"></div>
+    </div>
     <div className="comment_box">
       <h1>Any comments you want to leave?</h1>
       <textarea
         id="comments"
         name="comments"
-        placeholder="comments"
+        placeholder="Comments..."
         onChange={event => setComments(event.target.value)}>  
       </textarea>
       <div className="button_area">
@@ -50,6 +55,7 @@ function Comments() {
         Next</Button>
       </div>
     </div>
+    </>
   )
 }
 
