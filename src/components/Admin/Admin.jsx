@@ -5,7 +5,9 @@ import { useHistory } from 'react-router-dom';
 
 import swal from 'sweetalert';
 import Button from '@material-ui/core/Button'
+import IconButton from '@material-ui/core/IconButton';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+import FlagIcon from '@material-ui/icons/Flag';
 
 function Admin() {
   const dispatch = useDispatch();
@@ -54,12 +56,25 @@ function Admin() {
     })
   }
 
+  const flag = (editId) => {
+    const id = Number(editId);
+    axios.put(`/feedback/${id}`, id )
+    .then(response => {
+      console.log(response)
+      getFeedback()
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
+
   return(
     <div>
       <h1>Admin Portal</h1>
       <table>
         <thead>
             <tr>
+                <th>Flag</th>
                 <th>Feeling?</th>
                 <th>Understanding?</th>
                 <th>Supported?</th>
@@ -71,6 +86,13 @@ function Admin() {
             {adminReducer.map(feedback => {
                 return (
                     <tr key={feedback.id} className={feedback.flagged.toString()}>
+                        <td><Button
+                              startIcon={<FlagIcon />}
+                              variant="contained"
+                              color="primary"
+                              onClick={() => flag(feedback.id)}>
+                            </Button>
+                        </td>
                         <td>{feedback.feeling}</td>
                         <td>{feedback.understanding}</td>
                         <td>{feedback.support}</td>

@@ -18,10 +18,10 @@ import Admin from '../Admin/Admin';
 const outerTheme = createMuiTheme({
   palette: {
     primary: {
-      main: blue[500],
+      main: '#2196f3',
     },
     secondary: {
-      main: pink[500],
+      main: '#d32f2f',
     },
   },
 });

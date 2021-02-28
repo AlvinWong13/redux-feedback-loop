@@ -60,4 +60,22 @@ router.delete('/:id', (req, res) => {
   })
 })
 
+router.put('/:id', (req, res) => {
+  const editId = [req.params.id];
+  const sqlText = `
+      UPDATE "feedback"
+        SET "flagged" = NOT "flagged"
+        WHERE id = $1;
+  `;
+  pool.query(sqlText, editId)
+  .then(response => {
+    console.log(response);
+    res.sendStatus(200);
+  })
+  .catch(err => {
+    console.log(err);
+    res.sendStatus(500);
+  })
+})
+
 module.exports = router
