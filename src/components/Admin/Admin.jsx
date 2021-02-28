@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom';
 
 import swal from 'sweetalert';
+import Button from '@material-ui/core/Button'
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 
 function Admin() {
   const dispatch = useDispatch();
@@ -24,6 +26,34 @@ function Admin() {
       })
     })
   }
+
+  const handleDelete = (deleteId) => {
+    const id = Number(deleteId);
+    swal({
+      title: "Are you sure?",
+      text: "This will remove the feedback forever",
+      icon: "warning",
+      button: "OK",
+    })
+    .then(remove => {
+      if (remove) {
+        console.log('delete', id);
+        axios.delete(`/feedback/${id}`)
+        .then(response => {
+          console.log(response)
+          getFeedback()
+        })
+        .catch(err => {
+          console.log(err)
+        })
+      }
+      else {
+        console.log('unable to delete')
+        return
+      }
+    })
+  }
+
   return(
     <div>
       <h1>Admin Portal</h1>
@@ -45,6 +75,12 @@ function Admin() {
                         <td>{feedback.understanding}</td>
                         <td>{feedback.support}</td>
                         <td>{feedback.comments}</td>
+                        <td><Button
+                              startIcon={<DeleteForeverIcon />}
+                              variant="contained"
+                              color="secondary"
+                              onClick={() => handleDelete(feedback.id)}>
+                            Delete</Button></td>
                     </tr>
                 )
             })}

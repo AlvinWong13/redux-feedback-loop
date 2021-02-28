@@ -45,7 +45,7 @@ textarea {
   margin-top: 10%;
   width: 50%;
   border-radius: 25px;
-  border: 2px solid rgba(48, 48, 243, 0.884);
+  border: 2px solid #2196f3;
   padding: 20px;
   width: 450px;
   height: 250px;
@@ -56,7 +56,7 @@ textarea {
   margin-top: 10%;
   width: 50%;
   border-radius: 25px;
-  border: 2px solid rgba(48, 48, 243, 0.884);
+  border: 2px solid #2196f3;
   padding: 20px;
   width: 525px;
   height: 350px;
@@ -67,7 +67,7 @@ textarea {
   margin-top: 10%;
   width: 50%;
   border-radius: 25px;
-  border: 2px solid rgba(48, 48, 243, 0.884);
+  border: 2px solid #2196f3;
   padding: 20px;
   width: 525px;
   flex-direction: column
@@ -76,4 +76,36 @@ textarea {
 select {
   display: block;
   margin: 0 auto;
+}
+
+table {
+  width: 90%;
+  margin: auto;
+  border-collapse: collapse;
+  border: 2px solid rgb(77, 77, 77);
+}
+
+th {
+  background-color: #000000;
+  color: white;
+}
+
+tr {
+  border-bottom: 1px solid rgb(77, 77, 77);
+}
+tr:nth-child(even) {
+  background-color: lightgrey;
+}
+tr:nth-child(odd) {
+  background-color: #2196f3;
+}
+
+td {
+  padding: 9px;
+  border: 1px solid rgb(77, 77, 77);
+}
+
+tr:hover{
+  background-color: white;
+  transition: .4s;
 }
