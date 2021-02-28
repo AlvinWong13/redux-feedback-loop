@@ -43,6 +43,7 @@ textarea {
 }
 
 .feedback_box {
+  box-shadow: 12px 12px 10px -4px black;
   margin: auto;
   margin-top: 10%;
   width: 50%;
@@ -54,6 +55,7 @@ textarea {
 }
 
 .comment_box {
+  box-shadow: 12px 12px 10px -4px black;
   margin: auto;
   margin-top: 10%;
   width: 50%;
@@ -65,6 +67,7 @@ textarea {
 }
 
 .review_box {
+  box-shadow: 12px 12px 10px -4px black;
   margin: auto;
   margin-top: 10%;
   width: 50%;

@@ -37,9 +37,6 @@ const adminReducer = ( state = [], action ) => {
     case 'GET_FEEDBACK':
         state = action.payload;
         return state;
-    case 'CLEAR_ADMIN':
-        state = [];
-        return state;
     default:
         return state;
   }

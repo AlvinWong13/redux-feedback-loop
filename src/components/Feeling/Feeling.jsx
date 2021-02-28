@@ -38,7 +38,7 @@ function Feeling() {
   }
 
   return(
-    <div className="feedback_box">
+    <div className="feedback_box" >
       <h1>How are you feeling today?</h1>
       <select
           name="feeling"

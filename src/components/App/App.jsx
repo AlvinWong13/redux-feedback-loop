@@ -1,10 +1,8 @@
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import React from 'react';
-import axios from 'axios';
 import './App.css';
 
 import { ThemeProvider, createMuiTheme } from '@material-ui/core';
-import { pink, blue } from '@material-ui/core/colors';
 
 import Header from '../Header/Header';
 import Home from '../Home/Home';
