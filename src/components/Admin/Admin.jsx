@@ -86,12 +86,12 @@ function Admin() {
             {adminReducer.map(feedback => {
                 return (
                     <tr key={feedback.id} className={feedback.flagged.toString()}>
-                        <td><Button
-                              startIcon={<FlagIcon />}
-                              variant="contained"
-                              color="primary"
+                        <td><IconButton
+                              color="secondary"
+                              variant="outlined"
                               onClick={() => flag(feedback.id)}>
-                            </Button>
+                              <FlagIcon />
+                            </IconButton>
                         </td>
                         <td>{feedback.feeling}</td>
                         <td>{feedback.understanding}</td>
