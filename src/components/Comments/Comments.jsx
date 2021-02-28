@@ -35,18 +35,20 @@ function Comments() {
         placeholder="comments"
         onChange={event => setComments(event.target.value)}>  
       </textarea>
-      <Button
-        startIcon={<ArrowBackIcon />}
-        variant="contained"
-        color="secondary"
-        onClick={() => handleButton(false)}>
-      Previous</Button>
-      <Button
-        endIcon={<ArrowForwardIcon />}
-        variant="contained"
-        color="primary"
-        onClick={() => handleButton(true)}>
-      Next</Button>
+      <div className="button_area">
+        <Button
+          startIcon={<ArrowBackIcon />}
+          variant="contained"
+          color="secondary"
+          onClick={() => handleButton(false)}>
+        Previous</Button>
+        <Button
+          endIcon={<ArrowForwardIcon />}
+          variant="contained"
+          color="primary"
+          onClick={() => handleButton(true)}>
+        Next</Button>
+      </div>
     </div>
   )
 }

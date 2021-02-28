@@ -21,3 +21,17 @@
 h4 {
   font-style: italic;
 }
+
+textarea {
+  height: 100px;
+  width: 375px;
+  resize: none;
+}
+
+.button_area{
+  padding-top: 35px;
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+}

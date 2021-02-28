@@ -49,18 +49,20 @@ function Submit() {
       <h4>Understanding: {feedbackReducer.understanding}</h4>
       <h4>Support: {feedbackReducer.support}</h4>
       <h3>Comments: {feedbackReducer.comments}</h3>
-      <Button 
-        startIcon={<ArrowBackIcon />}
-        variant="contained"
-        color="secondary"
-        onClick={() => handleButton(false)}>
-      Previous</Button>
-      <Button
-        endIcon={<ArrowForwardIcon />}
-        variant="contained"
-        color="primary"
-        onClick={() => handleButton(true)}>
-      Submit</Button>
+      <div className="button_area">
+        <Button 
+          startIcon={<ArrowBackIcon />}
+          variant="contained"
+          color="secondary"
+          onClick={() => handleButton(false)}>
+        Previous</Button>
+        <Button
+          endIcon={<ArrowForwardIcon />}
+          variant="contained"
+          color="primary"
+          onClick={() => handleButton(true)}>
+        Submit</Button>
+      </div>
     </div>
   )
 }

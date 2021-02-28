@@ -58,18 +58,20 @@ function Support() {
             <option value="2">2 - I could have used more support</option>
             <option value="1">1 - Not at all</option>
       </select>
-      <Button
-        startIcon={<ArrowBackIcon />}
-        variant="contained"
-        color="secondary"
-        onClick={() => handleButton(false)}>
-      Previous</Button>
-      <Button
-        endIcon={<ArrowForwardIcon />}
-        variant="contained"
-        color="primary"
-        onClick={() => handleButton(true)}>
-      Next</Button>
+      <div className="button_area">
+        <Button
+          startIcon={<ArrowBackIcon />}
+          variant="contained"
+          color="secondary"
+          onClick={() => handleButton(false)}>
+        Previous</Button>
+        <Button
+          endIcon={<ArrowForwardIcon />}
+          variant="contained"
+          color="primary"
+          onClick={() => handleButton(true)}>
+        Next</Button>
+      </div>
     </div>   
   )
 }

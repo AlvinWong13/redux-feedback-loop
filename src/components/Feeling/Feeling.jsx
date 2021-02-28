@@ -52,12 +52,14 @@ function Feeling() {
             <option value="2">2 - Not too great</option>
             <option value="1">1 - I wish today was over</option>
       </select>
-      <Button 
-        endIcon={<ArrowForwardIcon />} 
-        variant="contained" 
-        color="primary"
-        onClick={() => handleButton()}>
-      Next</Button>
+      <div className="button_area">
+        <Button 
+          endIcon={<ArrowForwardIcon />} 
+          variant="contained" 
+          color="primary"
+          onClick={() => handleButton()}>
+        Next</Button>
+      </div>
     </div>
   )
 }

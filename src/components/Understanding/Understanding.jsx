@@ -58,19 +58,20 @@ function Understanding() {
             <option value="2">2 - I understood a little bit</option>
             <option value="1">1 - I did not understand anything</option>
       </select>
-      <Button 
-        startIcon={<ArrowBackIcon />}
-        variant="contained"
-        color="secondary"
-        onClick={() => handleButton(false)}>
-      Previous</Button>
-      <Button
-        endIcon={<ArrowForwardIcon />}
-        variant="contained"
-        color="primary"
-        onClick={() => handleButton(true)}>
-      Next</Button>
-      
+      <div className="button_area">
+        <Button 
+          startIcon={<ArrowBackIcon />}
+          variant="contained"
+          color="secondary"
+          onClick={() => handleButton(false)}>
+        Previous</Button>
+        <Button
+          endIcon={<ArrowForwardIcon />}
+          variant="contained"
+          color="primary"
+          onClick={() => handleButton(true)}>
+        Next</Button>
+      </div>
     </div>
   )
 }
