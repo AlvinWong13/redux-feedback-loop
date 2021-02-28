@@ -6,12 +6,14 @@ import './App.css';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core';
 import { pink, blue } from '@material-ui/core/colors';
 
+import Header from '../Header/Header';
 import Home from '../Home/Home';
 import Feeling from '../Feeling/Feeling';
 import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Submit from '../Submit/Submit';
+import Admin from '../Admin/Admin';
 
 const outerTheme = createMuiTheme({
   palette: {
@@ -30,10 +32,7 @@ function App() {
     <Router>
       <ThemeProvider theme={outerTheme}>
       <div className='App'>
-        <header className='App-header'>
-          <h1 className='App-title'>Feedback!</h1>
-          <h4>Don't forget it!</h4>
-        </header>
+        <Header />
         <Route path='/' exact>
           <Home />
         </Route>
@@ -51,6 +50,9 @@ function App() {
         </Route>
         <Route path='/submit' >
           <Submit />
+        </Route>
+        <Route path='/admin' >
+          <Admin />
         </Route>
       </div>
       </ThemeProvider>

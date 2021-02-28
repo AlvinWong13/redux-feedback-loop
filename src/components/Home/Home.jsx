@@ -11,8 +11,7 @@ function Home() {
   }
 
   return(
-    <div>
-      <h2>Cullen Feedback Form</h2>
+    <div className="home_button">
       <Button
         endIcon={<PlayCircleOutlineIcon />}
         variant="contained"

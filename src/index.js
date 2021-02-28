@@ -32,9 +32,23 @@ const feedbackReducer = ( state = {}, action ) => {
   }
 }
 
+const adminReducer = ( state = [], action ) => {
+  switch (action.type) {
+    case 'GET_FEEDBACK':
+        state = action.payload;
+        return state;
+    case 'CLEAR_ADMIN':
+        state = [];
+        return state;
+    default:
+        return state;
+  }
+}
+
 const storeInstance = createStore(
   combineReducers({
     feedbackReducer,
+    adminReducer,
   }),
   applyMiddleware(logger)
 );
