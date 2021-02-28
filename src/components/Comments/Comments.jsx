@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom';
 
+// set up for styling
 import Button from '@material-ui/core/Button'
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
@@ -13,6 +14,7 @@ function Comments() {
   // capture local state
   const [comments, setComments] = useState('')
 
+  // handle event to go to next page and back
   const handleButton = (movement) => {
     if (movement) {
       dispatch({

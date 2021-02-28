@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
+// set up for styling
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -28,13 +30,16 @@ const useStyles = makeStyles((theme) => ({
 
 function Header() {
 const classes = useStyles();
+// handle menu button in local state
 const [open, setOpen] = React.useState(false);
 const anchorRef = React.useRef(null);
 
+// handle menu button open
 const handleToggle = () => {
   setOpen((prevOpen) => !prevOpen);
 };
 
+// handle menu button close
 const handleClose = (event) => {
   if (anchorRef.current && anchorRef.current.contains(event.target)) {
     return;
@@ -43,6 +48,7 @@ const handleClose = (event) => {
   setOpen(false);
 };
 
+// menu button drop down
 function handleListKeyDown(event) {
   if (event.key === 'Tab') {
     event.preventDefault();

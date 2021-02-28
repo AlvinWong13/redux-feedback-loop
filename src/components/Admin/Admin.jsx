@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 
+// set up for styling
 import swal from 'sweetalert';
 import IconButton from '@material-ui/core/IconButton';
 import ClearIcon from '@material-ui/icons/Clear';
@@ -10,13 +11,16 @@ import FlagIcon from '@material-ui/icons/Flag';
 
 function Admin() {
   const dispatch = useDispatch();
+  // to switch color of flag when clicked in local state
   const [flag, setFlag] = React.useState(true);
   const adminReducer = useSelector(store => store.adminReducer)
 
+  // on page load 
   useEffect(() => {
     getFeedback();
   }, []);
 
+  // get feedback from DB
   const getFeedback = () => {
     axios.get('/feedback')
     .then(response => {
@@ -28,6 +32,8 @@ function Admin() {
     })
   }
 
+  // delete one feedback from DB
+  // and alert to confirm deletion
   const handleDelete = (deleteId) => {
     const id = Number(deleteId);
     swal({
@@ -55,6 +61,7 @@ function Admin() {
     })
   }
 
+  // flag feedback for review
   const flagged = (editId) => {
     setFlag(!flag);
     const id = Number(editId);

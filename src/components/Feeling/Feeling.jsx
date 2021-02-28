@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom';
 
+// set up for styling
 import swal from 'sweetalert';
 import Button from '@material-ui/core/Button'
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
@@ -13,7 +14,8 @@ function Feeling() {
   // capture local state
   const [feeling, setFeeling] = useState('')
 
-  // handle event to go to next page
+  // handle event to go to next page and back
+  // alert to make sure option picked
   const handleButton = () => {
     if (feeling === "") {
         swal({

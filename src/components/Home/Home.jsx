@@ -1,11 +1,13 @@
 import { useHistory } from 'react-router-dom';
 
+// set up for styling
 import Button from '@material-ui/core/Button'
 import ForwardIcon from '@material-ui/icons/Forward';
 
 function Home() {
   const history = useHistory();
 
+  // handle event to go to next page
   const begin = () => {
     history.push('/feeling')
   }

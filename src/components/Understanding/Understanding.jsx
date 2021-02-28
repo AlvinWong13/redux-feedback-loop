@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom';
 
+// set up for styling
 import swal from 'sweetalert';
 import Button from '@material-ui/core/Button'
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
@@ -14,7 +15,8 @@ function Understanding() {
   // capture local state
   const [understanding, setUnderstanding] = useState('')
 
-  // handle event to go to next page
+  // handle event to go to next page and back
+  // alert to make sure option picked
   const handleButton = (movement) => {
     if (movement) {
       if (understanding === "") {
