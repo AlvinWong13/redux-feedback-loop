@@ -16,8 +16,9 @@ function Submit() {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  //toggle button to go home after submitting feedback in local state
+  // toggle button to go home after submitting feedback in local state
   const [isVisible, setIsVisible] = useState(true);
+  // toggle description after submitting feedback
   const [reviewFeedback, setReviewFeedback] = useState(true);
 
   // handle event to go to next page, back, or home

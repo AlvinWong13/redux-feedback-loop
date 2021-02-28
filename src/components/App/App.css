@@ -33,7 +33,7 @@ textarea {
 }
 
 .submit_buttons {
-  padding-top: 10px;
+  padding-top: 1px;
   width: 75%;
   display: flex;
   justify-content: space-around;
@@ -67,7 +67,7 @@ textarea {
 .review_box {
   box-shadow: 12px 12px 10px -4px black;
   margin: auto;
-  margin-top: 10%;
+  margin-top: 5%;
   width: 50%;
   border-radius: 25px;
   border: 2px solid #2196f3;
