@@ -56,13 +56,16 @@ function handleListKeyDown(event) {
         <Toolbar>
           <IconButton 
             edge="start" 
+            ref={anchorRef}
             className={classes.menuButton} 
             color="inherit" 
-            aria-label="menu"
+            aria-label= "menu" 
+            aria-controls={open ? 'menu-list-grow' : undefined}
+            aria-haspopup="true"
             onClick={handleToggle}>
             <MenuIcon />
           </IconButton>
-          <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
+          <Popper placement="bottom-start" open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
           {({ TransitionProps, placement }) => (
             <Grow
               {...TransitionProps}
