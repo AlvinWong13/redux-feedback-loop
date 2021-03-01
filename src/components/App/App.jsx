@@ -1,4 +1,4 @@
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import React from 'react';
 import './App.css';
 
@@ -12,6 +12,8 @@ import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Submit from '../Submit/Submit';
 import Admin from '../Admin/Admin';
+
+
 
 const outerTheme = createMuiTheme({
   palette: {
