@@ -12,7 +12,6 @@ import FlagIcon from '@material-ui/icons/Flag';
 function Admin() {
   const dispatch = useDispatch();
   // to switch color of flag when clicked in local state
-  const [flag, setFlag] = React.useState(true);
   const adminReducer = useSelector(store => store.adminReducer)
 
   // on page load 
@@ -63,7 +62,6 @@ function Admin() {
 
   // flag feedback for review
   const flagged = (editId) => {
-    setFlag(!flag);
     const id = Number(editId);
     axios.put(`/feedback/${id}`, id )
     .then(response => {
@@ -94,7 +92,7 @@ function Admin() {
                 return (
                     <tr key={feedback.id} className={feedback.flagged.toString()}>
                         <td><IconButton
-                              color={ flag ? "secondary" : "primary" }
+                              color={ feedback.flagged ? "secondary" : "primary" }
                               variant="outlined"
                               onClick={() => flagged(feedback.id)}>
                               <FlagIcon />
