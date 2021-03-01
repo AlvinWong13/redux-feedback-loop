@@ -15,6 +15,9 @@ import Grow from '@material-ui/core/Grow';
 import Popper from '@material-ui/core/Popper';
 import Paper from '@material-ui/core/Paper';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+import Badge from '@material-ui/core/Badge';
+import Avatar from '@material-ui/core/Avatar';
+import { pink } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,6 +28,10 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
+  },
+  pink: {
+    color: theme.palette.getContrastText(pink[500]),
+    backgroundColor: pink[500],
   },
 }));
 
@@ -60,6 +67,7 @@ function handleListKeyDown(event) {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
+        <Badge anchorOrigin={{vertical: 'top', horizontal:'right',}} color="secondary" badgeContent={1}>
           <IconButton 
             edge="start" 
             ref={anchorRef}
@@ -71,6 +79,7 @@ function handleListKeyDown(event) {
             onClick={handleToggle}>
             <MenuIcon />
           </IconButton>
+          </Badge>
           <Popper placement="bottom-start" open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
           {({ TransitionProps, placement }) => (
             <Grow
@@ -93,7 +102,8 @@ function handleListKeyDown(event) {
             className={classes.title}>
             Feedback
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Avatar className={classes.pink}>A</Avatar>
+          <Button color="inherit">Logout</Button>
         </Toolbar>
       </AppBar>
     </div>
